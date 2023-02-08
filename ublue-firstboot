@@ -6,6 +6,12 @@ if test -e "$HOME"/.config/ublue/firstboot-done; then
 fi
 
 (
+echo "# Setting nvidia kargs"
+rpm-ostree kargs \
+    --append=rd.driver.blacklist=nouveau \
+    --append=modprobe.blacklist=nouveau \
+    --append=nvidia-drm.modeset=1
+
 echo "# Waiting for Internet connection"
 until /usr/bin/ping -q -c 1 flathub.org; do sleep 1; done
 echo "00"
@@ -53,7 +59,7 @@ if [ "$?" != 0 ] ; then
           --text="Removing Fedora Flatpak Repo Failed"
         exit 1
 fi
-echo "25"
+echo "30"
 
 echo "# Installing Librewolf"
 /usr/bin/flatpak install --user --noninteractive flathub io.gitlab.librewolf-community
@@ -62,7 +68,7 @@ if [ "$?" != 0 ] ; then
           --text="Installing Librewolf Failed"
         exit 1
 fi
-echo "30"
+echo "40"
 
 echo "# Installing Flatseal"
 /usr/bin/flatpak install --user --noninteractive flathub com.github.tchx84.Flatseal
@@ -71,7 +77,25 @@ if [ "$?" != 0 ] ; then
           --text="Installing Flatseal Failed"
         exit 1
 fi
-echo "90"
+echo "50"
+
+echo "# Installing Nomacs"
+/usr/bin/flatpak install --user --noninteractive flathub org.nomacs.ImageLounge
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Nomacs Failed"
+        exit 1
+fi
+echo "60"
+
+echo "# Installing Obsidian"
+/usr/bin/flatpak install --user --noninteractive md.obsidian.Obsidian
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Obsidian Failed"
+        exit 1
+fi
+echo "70"
 
 echo "# Installing MPV"
 /usr/bin/flatpak install --user --noninteractive flathub io.mpv.Mpv
@@ -80,16 +104,18 @@ if [ "$?" != 0 ] ; then
           --text="Installing MPV Failed"
         exit 1
 fi
-echo "100"
+echo "95"
 
 echo "# Reticulating Final Splines"
 mkdir -p "$HOME"/.config/ublue/
 touch "$HOME"/.config/ublue/firstboot-done
 cp -n /etc/justfile "$HOME"/.justfile
 
+echo "100"
+
 ) | 
      
-   zenity --progress --title="uBlue Desktop Firstboot" --percentage=0 --auto-close --no-cancel --width=300
+   zenity --progress --title="uBlue Desktop Firstboot (reboot when done)" --percentage=0 --auto-close --no-cancel --width=300
 
 if [ "$?" != 0 ] ; then
         zenity --error \
