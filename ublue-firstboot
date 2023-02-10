@@ -124,6 +124,15 @@ if [ "$?" != 0 ] ; then
 fi
 echo "95"
 
+echo "# Installing Antigen"
+curl -L git.io/antigen > antigen.zsh
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Antigen Failed"
+        exit 1
+fi
+echo "99"
+
 echo "# Reticulating Final Splines"
 mkdir -p "$HOME"/.config/ublue/
 touch "$HOME"/.config/ublue/firstboot-done
