@@ -97,6 +97,15 @@ if [ "$?" != 0 ] ; then
 fi
 echo "70"
 
+echo "# Installing Vorta for BorgBackup"
+/usr/bin/flatpak install --user --noninteractive com.borgbase.Vorta
+if [ "$?" != 0 ] ; then
+        zenity --error \
+          --text="Installing Vorta for BorgBackup Failed"
+        exit 1
+fi
+echo "70"
+
 echo "# Installing MPV"
 /usr/bin/flatpak install --user --noninteractive flathub io.mpv.Mpv
 if [ "$?" != 0 ] ; then
