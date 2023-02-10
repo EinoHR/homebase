@@ -53,70 +53,8 @@ if [ "$?" != 0 ] ; then
           --text="Removing Fedora Flatpak Repo Failed"
         exit 1
 fi
-echo "30"
-
-echo "# Installing Librewolf"
-/usr/bin/flatpak install --user --noninteractive flathub io.gitlab.librewolf-community
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing Librewolf Failed"
-        exit 1
-fi
-echo "40"
-
-echo "# Installing Flatseal"
-/usr/bin/flatpak install --user --noninteractive flathub com.github.tchx84.Flatseal
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing Flatseal Failed"
-        exit 1
-fi
 echo "50"
 
-echo "# Installing Nomacs"
-/usr/bin/flatpak install --user --noninteractive flathub org.nomacs.ImageLounge
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing Nomacs Failed"
-        exit 1
-fi
-echo "60"
-
-echo "# Installing GPU Screen Recorder"
-/usr/bin/flatpak install --user --noninteractive flathub com.dec05eba.gpu_screen_recorder
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing GPU Screen Recorder Failed"
-        exit 1
-fi
-echo "65"
-
-echo "# Installing Obsidian"
-/usr/bin/flatpak install --user --noninteractive md.obsidian.Obsidian
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing Obsidian Failed"
-        exit 1
-fi
-echo "70"
-
-echo "# Installing Vorta for BorgBackup"
-/usr/bin/flatpak install --user --noninteractive com.borgbase.Vorta
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing Vorta for BorgBackup Failed"
-        exit 1
-fi
-echo "80"
-
-echo "# Installing MPV"
-/usr/bin/flatpak install --user --noninteractive flathub io.mpv.Mpv
-if [ "$?" != 0 ] ; then
-        zenity --error \
-          --text="Installing MPV Failed"
-        exit 1
-fi
-echo "95"
 
 echo "# Installing Antigen"
 curl -L git.io/antigen > antigen.zsh
@@ -125,7 +63,7 @@ if [ "$?" != 0 ] ; then
           --text="Installing Antigen Failed"
         exit 1
 fi
-echo "99"
+echo "70"
 
 echo "# Reticulating Final Splines"
 mkdir -p "$HOME"/.config/ublue/
