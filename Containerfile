@@ -8,7 +8,9 @@ COPY etc /etc
 COPY ublue-firstboot /usr/bin
 
 RUN rpm-ostree override remove firefox firefox-langpacks && \
-    rpm-ostree install distrobox just rsync btop kitty starship zsh && \
+	# starship.rs is in the terra repos
+	wget -P /etc/yum.repos.d/ https://terra.fyralabs.com/terra.repo && \
+    rpm-ostree install distrobox just rsync btop kitty rust-starship zsh && \
 	chsh -s /bin/zsh && \
     sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
     systemctl enable rpm-ostreed-automatic.timer && \
