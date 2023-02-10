@@ -95,7 +95,7 @@ if [ "$?" != 0 ] ; then
           --text="Installing GPU Screen Recorder Failed"
         exit 1
 fi
-echo "60"
+echo "65"
 
 echo "# Installing Obsidian"
 /usr/bin/flatpak install --user --noninteractive md.obsidian.Obsidian
