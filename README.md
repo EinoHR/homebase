@@ -1,6 +1,8 @@
-# base
+# homebase
 
-[![build-ublue](https://github.com/ublue-os/base/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/base/actions/workflows/build.yml)
+Personal fork of the ublueos base based on kinoite-nvidia.
+
+[![build-ublue](https://github.com/EinoHR/homebase/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/base/actions/workflows/build.yml)
 
 A base image with a (mostly) stock Fedora Silverblue. Help us make a sweet base image: Pull requests and improvements appreciated and encouraged! Scroll to the bottom to see how to make your own!
 
@@ -18,11 +20,11 @@ These github actions and methods are meant to be shared and improved upon, [so c
 
 Warning: This is an experimental feature and should not be used in production (yet), however it's pretty close)
 
-    sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/base:latest
+    sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/einohr/homebase:latest
     
 We build date tags as well, so if you want to rebase to a particular day's release:
   
-    sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/base:20221217 
+    sudo rpm-ostree rebase ostree-unverified-registry:ghcr.io/einohr/homebase:20221217 
 
 The `latest` tag will automatically point to the latest build. 
 
