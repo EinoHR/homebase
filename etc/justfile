@@ -16,7 +16,7 @@ setup-flatpaks:
 	com.dec05eba.gpu_screen_recorder \\
 	org.nomacs.ImageLounge \\
 	com.github.tchx84.Flatseal \\
-	io.gitlab.librewolf-community \\
+	io.gitlab.librewolf-community
 
 setup-gaming:
   echo 'Setting up gaming experience ... lock and load.'
