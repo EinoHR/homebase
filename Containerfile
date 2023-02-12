@@ -4,6 +4,7 @@ FROM ghcr.io/ublue-os/kinoite:${FEDORA_MAJOR_VERSION}
 # See https://pagure.io/releng/issue/11047 for final location
 
 COPY etc /etc
+COPY usr /usr
 
 COPY ublue-firstboot /usr/bin
 
