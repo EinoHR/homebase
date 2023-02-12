@@ -38,6 +38,12 @@ setup-gaming:
   flatpak override --user --env=MANGOHUD=1 com.valvesoftware.Steam 
   flatpak override --user --env=MANGOHUD=1 com.heroicgameslauncher.hgl 
  
+nvidia-kargs:
+  rpm-ostree kargs \\
+      --append=rd.driver.blacklist=nouveau \\
+      --append=modprobe.blacklist=nouveau \\
+      --append=nvidia-drm.modeset=1
+
 update:
   rpm-ostree update
   flatpak update -y
