@@ -2,15 +2,6 @@
 
 Personal fork of the ublueos base based on kinoite-nvidia.
 
-### NVIDIA Kargs
-
-```
-rpm-ostree kargs \
-    --append=rd.driver.blacklist=nouveau \
-    --append=modprobe.blacklist=nouveau \
-    --append=nvidia-drm.modeset=1
-```
-
 [![build-ublue](https://github.com/EinoHR/homebase/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/base/actions/workflows/build.yml)
 
 A base image with a (mostly) stock Fedora Silverblue. Help us make a sweet base image: Pull requests and improvements appreciated and encouraged! Scroll to the bottom to see how to make your own!
