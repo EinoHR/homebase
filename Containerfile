@@ -1,6 +1,6 @@
 ARG FEDORA_MAJOR_VERSION=37
 
-FROM ghcr.io/ublue-os/kinoite:${FEDORA_MAJOR_VERSION}
+FROM ghcr.io/ublue-os/kinoite-nvidia:${FEDORA_MAJOR_VERSION}
 # See https://pagure.io/releng/issue/11047 for final location
 
 COPY etc /etc
