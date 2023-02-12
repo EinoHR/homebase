@@ -6,6 +6,7 @@ Personal fork of the ublueos base based on kinoite-nvidia.
 * ~/ decluttering
   * zsh config dir changed to .config/zsh
   * .xsession-errors moved to .cache
+  * .Xauthority moved to .local/share/sddm/
 
 
 [![build-ublue](https://github.com/EinoHR/homebase/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/base/actions/workflows/build.yml)
