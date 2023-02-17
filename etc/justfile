@@ -13,7 +13,7 @@ changelogs:
 setup-flatpaks:
   echo 'Setting up your flatpaks...'
   flatpak install -y --user \\
-  	io.mpv.Mpv \\
+  io.mpv.Mpv \\
 	com.borgbase.Vorta \\
 	md.obsidian.Obsidian \\
 	com.dec05eba.gpu_screen_recorder \\
