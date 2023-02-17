@@ -68,7 +68,7 @@ echo "70"
 echo "# Reticulating Final Splines"
 mkdir -p "$HOME"/.config/ublue/
 touch "$HOME"/.config/ublue/firstboot-done
-cp -n /etc/justfile "$HOME"/.justfile
+ln -s /etc/justfile "$HOME"/.justfile
 
 echo "100"
 
