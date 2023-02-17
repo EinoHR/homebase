@@ -4,6 +4,9 @@ default:
 bios:
   systemctl reboot --firmware-setup
 
+setup-refind:
+  refind-install && refind-mkdefault
+
 changelogs:
   rpm-ostree db diff --changelogs
   
