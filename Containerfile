@@ -20,7 +20,7 @@ RUN rpm-ostree override remove firefox firefox-langpacks && \
     rpm-ostree install distrobox just rsync syncthing btop kitty starship zsh zenity bismuth fish rEFInd ulauncher qemu libvirt virt-manager python && \
     sed -i 's/#AutomaticUpdatePolicy.*/AutomaticUpdatePolicy=stage/' /etc/rpm-ostreed.conf && \
     systemctl enable rpm-ostreed-automatic.timer && \
-    systemctl enable flatpak-automatic.timer && \
+    systemctl enable flatpak-system-update.timer && \
     sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_ublue-os-vanilla-first-setup.repo && \
     rm -rf \
         /tmp/* \
