@@ -14,7 +14,7 @@ COPY build.sh /tmp/build.sh
 # copied from the official container image as it's not avaible as an rpm
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
-RUN /tmp/build.sh
+RUN chmod +x /tmp/build.sh && /tmp/build.sh
 
 RUN rm -rf \
         /tmp/* \
